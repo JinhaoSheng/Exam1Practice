@@ -213,7 +213,7 @@ def run_test_problem1b():
 
     # Test 4:
     expected = 5  # This is APPROXIMATELY the correct answer.
-    answer = problem1a(3, 5)
+    answer = problem1b(3, 5)
     print()
     print('Test 4 expected:', expected, '(approximately)')
     print('       actual:  ', answer)

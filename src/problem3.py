@@ -117,12 +117,12 @@ def problem3a(window, point, n):
     total = 0
     for k in range(n):
         line = rg.Line(rg.Point(point.x + 20 * k, point.y + 10 * k), rg.Point(point.x + 20 * k, point.y + 50 + 10 * k))
-        if k > 12:
+        if k > 6:
             line.thickness = 13
             total += 13
         else:
-            line.thickness = k + 1
-            total += k + 1
+            line.thickness = 2 * k + 1
+            total += 2 * k + 1
         line.attach_to(window)
         window.render()
     return total
@@ -160,7 +160,7 @@ def problem3a(window, point, n):
         :type n:      int
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
     # ------------------------------------------------------------------
@@ -188,7 +188,15 @@ def run_test_problem3b():
 
 
 def problem3b(m, point1):
-    """
+    window  = rg.RoseWindow(400, 650)
+    total = 0
+    for k in range(m):
+        problem3a(window, rg.Point(point1.x, point1.y + 60 * k), 3 + 2* k)
+        total = total + problem3a(window, rg.Point(point1.x, point1.y + 60 * k), 3 + 2* k)
+    window.render()
+    window.close_on_mouse_click()
+    return total
+"""
     See   problem3b_picture.pdf   in this project for pictures
     that may help you better understand the following specification:
 
@@ -224,7 +232,7 @@ def problem3b(m, point1):
         :type point1: rg.Point
     """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #          Tests have been written for you (above).
     #
     ####################################################################

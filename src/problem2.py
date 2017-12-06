@@ -78,7 +78,7 @@ def problem2a(circle, rectangle, window):
     ur = rectangle.get_upper_right_corner()
     ll = rectangle.get_lower_left_corner()
     line = rg.Line(ur, ll)
-    #line.arrow(ur, ll)
+    line.arrow = 'last'
     circle.fill_color = rectangle.outline_color
     line.attach_to(window)
     window.render()
@@ -113,7 +113,7 @@ def problem2a(circle, rectangle, window):
       :type window:    rg.RoseWindow
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #          Tests have been written for you (above).
     # ------------------------------------------------------------------
     # ------------------------------------------------------------------
