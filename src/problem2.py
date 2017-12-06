@@ -2,8 +2,8 @@
 PRACTICE Test 1, problem 2.
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Jinhao Sheng.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -73,6 +73,17 @@ def run_test_problem2a():
 
 
 def problem2a(circle, rectangle, window):
+    circle.attach_to(window)
+    rectangle.attach_to(window)
+    ur = rectangle.get_upper_right_corner()
+    ll = rectangle.get_lower_left_corner()
+    line = rg.Line(ur, ll)
+    #line.arrow(ur, ll)
+    circle.fill_color = rectangle.outline_color
+    line.attach_to(window)
+    window.render()
+
+
     """
     See   problem2a_picture.pdf   in this project for pictures
     that may help you better understand the following specification:
@@ -144,7 +155,13 @@ def run_test_problem2b():
 
 
 def problem2b(rect, n, delta, win):
-    """
+    ul = rect.get_upper_left_corner()
+    lr = rect.get_lower_right_corner()
+    for k in range(n):
+        rect = rg.Rectangle(rg.Point(ul.x - k * delta, ul.y - k * delta), rg.Point(lr.x + k * delta, lr.y + k * delta))
+        rect.attach_to(win)
+        win.render()
+"""
     See   problem2b_picture.pdf   in this project for pictures
     that may help you better understand the following specification:
     
@@ -173,7 +190,7 @@ def problem2b(rect, n, delta, win):
       :type win:    rg.RoseWindow
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Tests have been written for you (above).
     # ------------------------------------------------------------------
     # ------------------------------------------------------------------
