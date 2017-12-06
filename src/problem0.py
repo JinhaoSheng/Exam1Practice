@@ -275,15 +275,6 @@ def run_test_problem0c():
 
 
 def problem0c(circle, n, window):
-    circle.attach_to(window)
-    center = circle.center
-    for k in range(n):
-        circle = rg.Circle(rg.Point(center.x + 2 * k * circle.radius, center.y), circle.radius)
-        circle.attach_to(window)
-        window.render(0.5)
-
-
-
     """
     See   problem0c_picture.pdf   in this project for pictures
     that may help you better understand the following specification:
@@ -315,6 +306,13 @@ def problem0c(circle, n, window):
     #   renders with a half-second pause after rendering.
     ####################################################################
     # ------------------------------------------------------------------
+    circle.attach_to(window)
+    center = circle.center
+    for k in range(n):
+        circle = rg.Circle(rg.Point(center.x + 2 * k * circle.radius, center.y), circle.radius)
+        circle.attach_to(window)
+        window.render(0.5)
+
 
 
 # ----------------------------------------------------------------------

@@ -94,7 +94,7 @@ def run_test_problem3a():
     print()
     print('Test 4 expected:', expected)
     print('       actual:  ', answer)
-
+    window3.close_on_mouse_click()
 
     # ------------------------------------------------------------------
     # TO DO: 2 (continued).
@@ -103,14 +103,17 @@ def run_test_problem3a():
     # ------------------------------------------------------------------
 
     # Test 5 (it is on window 3):
+    title = 'Problem 3a. Test 5: Start at (20, 30), 20 lines'
+    window4 = rg.RoseWindow(450, 300, title)
+
     point = rg.Point(20, 30)
     expected = 218
-    answer = problem3a(window3, point, 20)
+    answer = problem3a(window4, point, 20)
     print()
     print('Test 5 expected:', expected)
     print('       actual:  ', answer)
 
-    window3.close_on_mouse_click()
+    window4.close_on_mouse_click()
 
 def problem3a(window, point, n):
 

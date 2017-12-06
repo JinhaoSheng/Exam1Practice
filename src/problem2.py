@@ -155,6 +155,7 @@ def run_test_problem2b():
 
 
 def problem2b(rect, n, delta, win):
+    rect.attach_to(win)
     ul = rect.get_upper_left_corner()
     lr = rect.get_lower_right_corner()
     for k in range(n):
