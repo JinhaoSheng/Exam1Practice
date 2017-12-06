@@ -2,8 +2,8 @@
 PRACTICE Test 1, problem 3.
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Jinhao Sheng.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -95,7 +95,6 @@ def run_test_problem3a():
     print('Test 4 expected:', expected)
     print('       actual:  ', answer)
 
-    window3.close_on_mouse_click()
 
     # ------------------------------------------------------------------
     # TO DO: 2 (continued).
@@ -103,9 +102,33 @@ def run_test_problem3a():
     # your choice), add 1 more test case of your own choosing.
     # ------------------------------------------------------------------
 
+    # Test 5 (it is on window 3):
+    point = rg.Point(20, 30)
+    expected = 218
+    answer = problem3a(window3, point, 20)
+    print()
+    print('Test 5 expected:', expected)
+    print('       actual:  ', answer)
+
+    window3.close_on_mouse_click()
 
 def problem3a(window, point, n):
-    """
+
+    total = 0
+    for k in range(n):
+        line = rg.Line(rg.Point(point.x + 20 * k, point.y + 10 * k), rg.Point(point.x + 20 * k, point.y + 50 + 10 * k))
+        if k > 12:
+            line.thickness = 13
+            total += 13
+        else:
+            line.thickness = k + 1
+            total += k + 1
+        line.attach_to(window)
+        window.render()
+    return total
+
+
+"""
     See   problem3a_picture.pdf   in this project for pictures
     that may help you better understand the following specification:
 
